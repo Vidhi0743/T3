@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Da Vinci Mystery - Clue 2</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url("images/bg.jpeg"); /* Your Da Vinci-related image */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .header {
+      background-color: rgb(89, 51, 5); /* Transparent background */
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
+      border-radius: 10px;
+    }
+
+    .clue {
+      background-color: rgba(234, 187, 87, 0.76);
+      border: 2px solid #2c3e50;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .clue h3 {
+      color: #2c3e50;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-container input {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 2px solid #2c3e50;
+      border-radius: 5px;
+    }
+
+    .btn {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: rgb(89, 51, 5);
+    }
+
+    .hint {
+      color: #e74c3c;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .solution {
+      display: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .next-clue {
+      display: none;
+      margin-top: 15px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .hidden-object {
+      display: none;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: 30px;
+      color: #e74c3c;
+      font-weight: bold;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>The Da Vinci Mystery</h1>
+    <p>Follow the clues to uncover the hidden treasure!</p>
+  </div>
+
+  <div class="container">
+    <!-- Clue 2: Find something hidden in the image -->
+    <div class="clue" id="clue2">
+      <h3>Clue 2: Something is hidden in the image. Can you find it?</h3>
+      <p>Examine the image carefully. There is a hidden message embedded somewhere in the artwork. Use your keen eye to discover the secret!</p>
+
+      <!-- Image to interact with -->
+      <div style="position: relative;">
+        <img src="images/1503.jpeg" alt="Mona Lisa" id="mona-lisa-image" onclick="showHiddenObject()">
+        <!-- Hidden message -->
+        <div class="hidden-object" id="hidden-object">Key: 1503</div>
+      </div>
+
+      <div class="input-container">
+        <label for="clue2-answer">Enter the hidden message:</label>
+        <input type="text" id="clue2-answer" placeholder="Your answer...">
+        <button class="btn" onclick="checkClue2()">Submit</button>
+        <p class="hint" id="clue2-hint">Hint:Look closely, it may be camouflaged!</p>
+      </div>
+      
+      <div class="solution" id="clue2-solution">Correct! The hidden message is "Key: 1503". Now proceed to the next clue.</div>
+      <div class="next-clue" id="next-clue2">
+        <a href="T3C2.html" class="btn">Next Clue</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showHiddenObject() {
+      // Reveal the hidden message when the image is clicked
+      document.getElementById('hidden-object').style.display = 'block';
+    }
+
+    function checkClue2() {
+      const answer = document.getElementById('clue2-answer').value.trim();
+      if (answer === '1503') {
+        document.getElementById('clue2-solution').style.display = 'block';
+        document.getElementById('next-clue2').style.display = 'block';
+      } else {
+        alert('Incorrect! Try again.');
+      }
+    }
+  </script>
+
+</body>
+</html>
