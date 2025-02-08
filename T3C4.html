@@ -119,24 +119,14 @@
   </div>
 
   <script>
-   function checkClue4() {
-    const answer = document.getElementById('clue4-answer').value.trim().toLowerCase();
-    const correctAnswer = 'the leaning tower of pisa';
-
-    // Ensure the answer is not empty
-    if (answer === '') {
-        alert('Please enter an answer!');
-        return;
-    }
-
-    if (answer === correctAnswer) {
+    function checkClue4() {
+      const answer = document.getElementById('clue4-answer').value.trim().toLowerCase();
+      if (answer === 'The leaning tower of pisa') {
         document.getElementById('clue4-solution').style.display = 'block';
         document.getElementById('next-clue').style.display = 'block';
-    } else {
+      } else {
         alert('Incorrect! Try again.');
-    }
-}
-
+      }
     }
   </script>
 
