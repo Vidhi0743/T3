@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-image: url("bg.jpeg"); /* Your Da Vinci-related image */
+      background-image: url("images/bg.jpeg"); /* Your Da Vinci-related image */
       background-size: cover;
       background-position: center;
       margin: 0;
@@ -121,7 +121,16 @@
   <script>
     function checkClue4() {
       const answer = document.getElementById('clue4-answer').value.trim().toLowerCase();
-      if (answer === 'The leaning tower of pisa') {
+      const correctAnswer = 'the leaning tower of pisa';  // Correct answer in lowercase
+
+      // Ensure the answer is not empty
+      if (answer === '') {
+        alert('Please enter an answer!');
+        return;
+      }
+
+      // Check if the answer matches the correct one
+      if (answer === correctAnswer) {
         document.getElementById('clue4-solution').style.display = 'block';
         document.getElementById('next-clue').style.display = 'block';
       } else {
